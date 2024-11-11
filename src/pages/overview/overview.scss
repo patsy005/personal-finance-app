@@ -1,0 +1,186 @@
+@use '../../colors';
+
+.overview {
+	&__panel {
+		margin-top: 3.2rem;
+	}
+	&__balance-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.2rem;
+	}
+	&__balance-item {
+		border-radius: 12px;
+		background-color: colors.$white;
+		padding: 2rem;
+		color: colors.$grey-900;
+		flex: 1;
+
+		&:first-of-type {
+			background-color: colors.$grey-900;
+			color: colors.$white;
+		}
+
+		h3 {
+			font-size: 1.4rem;
+			font-weight: 400;
+			line-height: 150%;
+			margin-bottom: 1.2rem;
+		}
+
+		p {
+			font-size: 3.2rem;
+			font-weight: 700;
+			line-height: 150%;
+		}
+	}
+
+	.pots-overview {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			width: 100%;
+		}
+
+		&--sumup {
+			padding: 1.6rem;
+			background-color: colors.$beige-100;
+			align-items: center;
+			border-radius: 12px;
+			display: flex;
+			gap: 1.6rem;
+			flex: 1;
+		}
+
+		&--sumup-info {
+			display: flex;
+			flex-direction: column;
+			gap: 1.1rem;
+
+			p {
+				&:first-of-type {
+					color: colors.$grey-500;
+					font-weight: 400;
+					line-height: 150%;
+					font-size: 1.4rem;
+				}
+			}
+
+			.amount {
+				color: colors.$grey-900;
+				font-weight: 700;
+				line-height: 120%;
+				font-size: 3.2rem;
+			}
+		}
+	}
+
+	.budgets-overview {
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.6rem;
+			width: 100%;
+
+			.box__details {
+				align-self: start;
+			}
+		}
+	}
+
+	.recurring-overview {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
+			width: 100%;
+		}
+
+		&__sum-up {
+			padding: 2rem 1.6rem;
+			border-radius: 8px;
+			border-left: 4px solid transparent;
+			display: flex;
+			align-self: stretch;
+			align-items: center;
+			justify-content: space-between;
+			background-color: colors.$beige-100;
+
+			&--total-paid {
+				border-left-color: colors.$green;
+			}
+
+			&--total-upcoming {
+				border-left-color: colors.$yellow;
+			}
+
+			&--due-soon {
+				border-left-color: colors.$cyan;
+			}
+
+			p {
+				color: colors.$grey-500;
+				font-weight: 400;
+				line-height: 150%;
+				font-size: 1.4rem;
+			}
+
+			span {
+				color: colors.$grey-900;
+				font-weight: 700;
+				line-height: 150%;
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.overview {
+		&__balance-list {
+			gap: 2.4rem;
+		}
+
+		&__balance-item {
+			padding: 2.4rem;
+
+			h3 {
+				font-size: 1.4rem;
+			}
+		}
+
+		.pots-overview {
+			&__container {
+				flex-direction: row;
+			}
+
+			&--sumup {
+				flex-grow: 0;
+				padding-right: 8.9rem;
+			}
+		}
+
+		.budgets-overview {
+			&__container {
+				flex-direction: row;
+				justify-content: space-between;
+				.box__details {
+					flex-direction: column;
+					width: auto !important;
+
+					.detail-box {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

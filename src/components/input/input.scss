@@ -1,0 +1,76 @@
+@use '../../colors';
+
+.input {
+	padding: 1.2rem 2rem;
+	border-radius: 8px;
+	border: 1px solid colors.$beige-500;
+	background-color: none;
+	font-size: 1.4rem;
+	color: colors.$grey-900;
+	font-family: inherit;
+	transition: border-color 0.3s ease-in-out;
+
+	&:hover {
+		border-color: colors.$grey-500;
+	}
+
+	&:active,
+	&:focus {
+		border-color: colors.$grey-900;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: colors.$beige-500;
+	}
+}
+
+.input-error {
+	&__text {
+		font-size: 1.2rem;
+		color: colors.$red;
+	}
+}
+
+.input-with-icon {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	&:focus-within {
+		border-color: colors.$grey-900;
+	}
+    
+	input {
+		border: none;
+		background: none;
+		padding: 0;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	svg{
+		position: absolute;
+		top: 50%;
+		right: 2rem;
+		transform: translateY(-50%);
+	}
+}
+
+.form {
+	.input {
+		width: 100%;
+
+		&__icon {
+			margin-right: 1.2rem;
+			font-size: 1.4rem;
+			color: colors.$grey-500;
+		}
+		
+	}
+}

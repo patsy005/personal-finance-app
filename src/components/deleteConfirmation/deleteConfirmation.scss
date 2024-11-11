@@ -1,0 +1,29 @@
+@use '../../colors';
+
+.delete-confirmation {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10.1rem;
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		color: colors.$grey-500;
+	}
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+    }
+}

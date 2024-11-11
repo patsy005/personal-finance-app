@@ -1,0 +1,52 @@
+@use '../../colors';
+
+.button {
+	border-radius: 8px;
+	font-family: inherit;
+	padding: 1.6rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 150%;
+	border: none;
+	transition: all 0.3s ease-in-out;
+
+	&__primary {
+		background-color: colors.$grey-900;
+		color: colors.$white;
+
+		&:hover {
+			background-color: colors.$grey-500;
+		}
+	}
+
+	&__secondary {
+		background-color: colors.$beige-100;
+		color: colors.$grey-900;
+		border: 1px solid transparent;
+
+		&:hover {
+			background-color: colors.$white;
+			border-color: colors.$beige-500;
+		}
+	}
+
+	&__destroy {
+		background: colors.$red;
+		color: colors.$white;
+
+		&:hover {
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
+				var(--color-red, #c94736);
+		}
+	}
+
+	&__tertiary {
+		background: none;
+		border: none;
+		color: colors.$grey-500;
+
+		&:hover {
+			color: colors.$grey-900;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+.modal__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+
+	.modal__content {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.modal__overlay {
+		.modal__content {
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	.modal__overlay {
+		.modal__content {
+			width: 30%;
+		}
+	}
+}

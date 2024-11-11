@@ -1,0 +1,16 @@
+@use '../../colors';
+
+.error-message {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        padding: 1.2rem 2rem;
+        border-radius: 8px;
+        border: 1px solid colors.$red;
+        color: colors.$red;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,77 @@
+@use '../../colors';
+
+.pots {
+	&__panel {
+		row-gap: 2.4rem;
+	}
+
+	&__heading {
+		margin-bottom: 3.2rem;
+
+		h1 {
+			margin-bottom: 0;
+		}
+	}
+
+	.select {
+		&__control {
+			border: none !important;
+		}
+
+		&__value-container {
+			display: none !important;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 3.2rem;
+
+		&--info {
+			gap: 1.6rem;
+
+			&--total-saved {
+				p {
+					font-size: 1.4rem;
+					color: colors.$grey-500;
+				}
+
+				h4 {
+					font-size: 3.2rem;
+					font-weight: 700;
+					line-height: 150%;
+				}
+			}
+
+			&--progress-box {
+				.progress-bar {
+					height: 8px;
+					padding: 0;
+				}
+			}
+
+			&--progress-info {
+				color: colors.$grey-500;
+				line-height: 150%;
+				.percentage {
+					font-size: 1.2rem;
+					font-weight: 700;
+				}
+
+				.target {
+					font-size: 1.2rem;
+				}
+			}
+		}
+
+		&--actions {
+			gap: 1.6rem;
+		}
+	}
+}
+.remaining-characters {
+	font-size: 1.2rem;
+	color: colors.$grey-500;
+	align-self: flex-end;
+}

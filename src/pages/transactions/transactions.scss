@@ -1,0 +1,94 @@
+@use '../../colors';
+
+.transactions {
+	.box {
+		padding: 1.6rem 2rem;
+	}
+	.pagination-btns {
+		margin-bottom: 2rem;
+
+		&__next-prev {
+			button {
+				gap: 1.6rem;
+			}
+		}
+
+		button {
+			padding: 1.6rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 8px;
+			border: 1px solid colors.$beige-500;
+			background-color: colors.$white;
+			font-family: inherit;
+			color: colors.$grey-900;
+			font-size: 1.4rem;
+			font-weight: normal;
+			line-height: 150%;
+			height: 40px;
+			transition: all 0.3s ease-in-out;
+
+			svg {
+				path {
+					transition: fill 0.3s ease-in-out;
+				}
+			}
+
+			&:hover:enabled,
+			&:focus-visible:enabled {
+				background-color: colors.$beige-500;
+				color: colors.$white;
+
+				svg {
+					path {
+						fill: colors.$white;
+					}
+				}
+			}
+
+			&:focus:enabled {
+				outline: none;
+			}
+		}
+
+		&__numbers {
+			gap: 0.8rem;
+
+			button {
+				height: 40px;
+				width: 40px;
+			}
+		}
+
+		.active {
+			background-color: colors.$grey-900;
+			color: colors.$white;
+
+			svg {
+				path {
+					fill: colors.$white;
+				}
+			}
+		}
+
+		&__next-prev button:not(.active),
+		&__numbers button:not(.active) {
+			&:disabled {
+				opacity: 0.4;
+			}
+		}
+	}
+
+	.border-bottom:not(:last-of-type) {
+		border-bottom: 1px solid colors.$grey-100 !important;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.transactions {
+		.box {
+			padding: 3.2rem;
+		}
+	}
+}

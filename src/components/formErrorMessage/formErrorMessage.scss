@@ -1,0 +1,10 @@
+@use '../../colors';
+
+.form {
+    &__error {
+        border-radius: 8px;
+        border: 1px solid colors.$red;
+        padding: 1.2rem 2rem;
+        color: colors.$red;
+    }
+}

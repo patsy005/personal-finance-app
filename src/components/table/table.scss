@@ -1,0 +1,77 @@
+@use '../../colors';
+
+.table {
+	background-color: transparent;
+	--bs-table-hover-bg: colors.$grey-100 !important;
+	&__header {
+		color: colors.$grey-500 !important;
+		font-weight: 400;
+		line-height: 150%;
+		font-size: 1.2rem;
+	}
+
+	&__cell {
+		padding: 1.6rem 0 !important;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	tbody {
+		margin-top: 2.4rem;
+		tr {
+			vertical-align: middle;
+
+			&:hover {
+				background-color: colors.$grey-100 !important;
+				.table__cell {
+					background-color: colors.$grey-100 !important;
+				}
+			}
+		}
+
+		.border-bottom:last-of-type {
+			border-bottom: none !important;
+			border-bottom-width: 0 !important;
+			border-color: transparent !important;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		&--selects {
+			gap: 2.4rem;
+		}
+
+		&--select-box {
+			gap: 0.8rem;
+
+			p {
+				font-size: 1.4rem;
+				font-weight: 400px;
+				color: colors.$grey-500;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.table {
+		&__header {
+			padding: 1.2rem 0 !important;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.table {
+		&__header {
+			padding: 1.2rem 1.6rem !important;
+		}
+
+		&__cell {
+			padding: 1.6rem !important;
+		}
+	}
+}

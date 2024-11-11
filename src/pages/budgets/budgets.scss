@@ -1,0 +1,206 @@
+@use '../../colors';
+@use '../../mixins';
+
+.budgets {
+	.left-column {
+		margin-bottom: 2.4rem;
+	}
+
+	&__heading {
+		margin-bottom: 3.2rem;
+		h1 {
+			margin-bottom: 0;
+		}
+	}
+	.spending-summary {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			gap: 2.4rem;
+			width: 100%;
+		}
+
+		&__details {
+			display: flex;
+			flex-direction: column;
+			gap: 2.4rem;
+		}
+
+		.box__details {
+			display: flex;
+			flex-direction: column;
+
+			.detail-box {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				padding: 1.6rem 0;
+
+				&:not(:last-of-type) {
+					border-bottom: 1px solid colors.$grey-100;
+				}
+
+				&__info {
+					display: flex;
+					flex-direction: row;
+					gap: 0.8rem;
+					align-items: center;
+				}
+
+				.name {
+					font-size: 1.4rem;
+					font-weight: 400;
+					line-height: 150%;
+					margin-left: 1.6rem;
+				}
+
+				.total-of {
+					color: colors.$grey-500;
+					font-size: 1.2rem;
+					font-weight: 400;
+					line-height: 150%;
+				}
+
+				.total-spending {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+
+	.spending {
+		&__list {
+			display: flex;
+			flex-direction: column;
+			gap: 2.4rem;
+		}
+
+		&__maximum {
+			font-size: 1.4rem;
+			font-weight: 400;
+			color: colors.$grey-500;
+		}
+
+		&__details {
+			display: flex;
+
+			&--spent,
+			&--remaining {
+				display: flex;
+				gap: 1.6rem;
+			}
+
+			&--box {
+				p {
+					&:first-of-type {
+						font-size: 1.2rem;
+						color: colors.$grey-500;
+						margin-bottom: 0.4rem;
+					}
+
+					&:last-of-type {
+						font-size: 1.4rem;
+						font-weight: 700;
+						color: colors.$grey-900;
+					}
+				}
+			}
+		}
+
+		&__latest-spending {
+			background-color: colors.$beige-100;
+			padding: 1.6rem;
+			gap: unset;
+
+			.box__header {
+				margin-bottom: 2rem;
+			}
+		}
+
+		&__latest-transactions {
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
+
+			.transactions__item {
+				&:not(:last-of-type) {
+					padding-bottom: 1.2rem;
+					border-bottom: 1px solid rgba(105, 104, 104, 0.15);
+				}
+
+				&--reciepment-avatar {
+					display: none;
+				}
+
+				&--amount,
+				&--reciepment-name {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.budgets {
+		.spending-summary {
+			&__container {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			&__details {
+				flex: 2;
+			}
+
+			.chart-wrapper {
+				justify-content: start;
+				flex: 1;
+			}
+		}
+
+		.spending {
+			&__latest-transactions {
+				.transactions__item {
+					&--reciepment-avatar {
+						display: block;
+						width: 32px;
+						height: 32px;
+					}
+				}
+			}
+		}
+
+		.select {
+			&__control {
+				border: none !important;
+			}
+
+			&__value-container {
+				display: none !important;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.budgets {
+		.spending-summary {
+			&__container {
+				flex-direction: column;
+				align-items: start;
+			}
+
+			&__details {
+				flex: 1;
+				width: 100%;
+			}
+
+			.chart-wrapper {
+				justify-content: center;
+				align-self: center;
+				flex: 1;
+			}
+		}
+	}
+}

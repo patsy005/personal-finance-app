@@ -1,0 +1,60 @@
+@use './colors';
+@forward './ui/Layout/layout.scss';
+@forward './components/sideBar/sideBar.scss';
+@forward './components/heading/heading.scss';
+@forward './components/spinner/spinner.scss';
+@forward './components/transactionItem/transactionItem.scss';
+@forward './components/budgetsChart/budgetsChart.scss';
+@forward './components/input/input.scss';
+@forward './components/select/select.scss';
+@forward './components/progressBar/progressBar.scss';
+@forward './components/button/button.scss';
+@forward './components/modal/modal.scss';
+@forward './components/Form/form.scss';
+@forward './components/headingSecondary/headingSecondary.scss';
+@forward './components/deleteConfirmation/deleteConfirmation.scss';
+@forward './components/table/table.scss';
+@forward './components/formErrorMessage/formErrorMessage.scss';
+@forward './components/errorMessage/errorMessage.scss';
+@forward './pages/transactions/transactions.scss';
+@forward './pages/budgets/budgets.scss';
+@forward './pages/pots/pots.scss';
+@forward './pages/recurringBills/recurringBills.scss';
+@forward './pages/overview/overview.scss';
+@forward './shared.scss';
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Public Sans', sans-serif;
+	font-size: 1.6rem;
+	color: colors.$grey-900;
+	background-color: colors.$beige-100;
+}
+
+.section {
+	padding: 2.4rem 1.6rem;
+	color: colors.$grey-900;
+	text-transform: capitalize;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.section {
+		padding: 3.2rem 4rem;
+	}
+}

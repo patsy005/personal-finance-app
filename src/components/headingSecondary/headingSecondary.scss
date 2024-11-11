@@ -1,0 +1,39 @@
+@use '../../colors';
+@use '../../mixins';
+
+.heading-secondary {
+	&__title {
+		display: flex;
+		gap: 1.6rem;
+		&--circle {
+			@include mixins.theme-circle(50%, 16px, 16px);
+			align-self: center;
+		}
+	}
+
+	.box__header {
+		width: auto;
+		flex: 2;
+	}
+}
+.select-edit-delete {
+	.select {
+		&__option {
+			&:last-of-type {
+				color: colors.$red !important;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.select {
+		&__control {
+			border: none !important;
+		}
+
+		&__value-container {
+			display: none !important;
+		}
+	}
+}

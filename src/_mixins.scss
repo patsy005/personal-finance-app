@@ -1,0 +1,6 @@
+@mixin theme-circle($border-radius, $width, $height) {
+	border-radius: $border-radius;
+	width: $width;
+	height: $height;
+	background-color: var(--theme-color);
+}
