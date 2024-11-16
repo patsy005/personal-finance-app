@@ -62,7 +62,7 @@ Users should be able to:
 - React Select
 - Bootstrap
 - React Hot Toast
-- NodeJS
+- Node.js
 - Express.js
 - MongoDB
 
