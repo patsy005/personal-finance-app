@@ -23,8 +23,12 @@ export default function DeleteConfirmation({ itemToDelete }: DeleteConfirmationP
 			dispatch(deleteBudget(itemToDelete.id))
 				.unwrap()
 				.then(() => closeModalHadler())
+				.then(() => toast.success('Budget successfully deleted'))
 		} else {
-			dispatch(deletePot(itemToDelete.id)).unwrap().then(() => closeModalHadler()).then(() => toast.success('Successfully deleted'))
+			dispatch(deletePot(itemToDelete.id))
+				.unwrap()
+				.then(() => closeModalHadler())
+				.then(() => toast.success('Pot successfully deleted'))
 		}
 	}
 
@@ -39,8 +43,8 @@ export default function DeleteConfirmation({ itemToDelete }: DeleteConfirmationP
 				</button>
 			</div>
 			<p className="delete-confirmation__text">
-				Are you sure you want to delete '{'category' in itemToDelete ? itemToDelete.category : itemToDelete.name}'? This action cannot be
-				reversed, and all the data inside it will be removed forever.
+				Are you sure you want to delete '{'category' in itemToDelete ? itemToDelete.category : itemToDelete.name}'? This
+				action cannot be reversed, and all the data inside it will be removed forever.
 			</p>
 			<div className="delete-confirmation__actions">
 				<Button className="destroy" onClick={deleteItemHandler}>
